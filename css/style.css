@@ -1,0 +1,29 @@
+body {
+    background-color: #123252;
+}
+
+#container {
+    width: 600px;
+    margin: 0 auto;
+}
+
+.square {
+    width: 30%;
+    margin: 1.6%;
+    padding-bottom: 30%;
+    float: left;
+    background-color: darkgrey;
+    border-radius: 20%;
+    transition: background 0.3s;
+}
+
+h1 {
+    text-align: center;
+    color:#fff;
+    margin:0;
+    padding: 25px 0;
+    transition: background 0.5s;
+}
+#message{
+    color:#fff;
+}
