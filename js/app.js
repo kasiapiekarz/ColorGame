@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
     var squares = document.querySelectorAll(".square");
-    
     var numSquares = 6
     var colors = generateRandomColors(numSquares);
     var messageDisplay = document.getElementById("message");
@@ -11,7 +10,6 @@ document.addEventListener("DOMContentLoaded", function () {
     var resetBtn = document.getElementById("reset");
     var easyBtn = document.getElementById("easyBtn");
     var hardBtn = document.getElementById("hardBtn");
-    
     easyBtn.addEventListener("click", function () {
         hardBtn.classList.remove("selected");
         this.classList.add("selected");
@@ -31,10 +29,9 @@ document.addEventListener("DOMContentLoaded", function () {
     hardBtn.addEventListener("click", function () {
         easyBtn.classList.remove("selected");
         this.classList.add("selected");
-        numSquares=6;
+        numSquares = 6;
         colors = generateRandomColors(numSquares);
         pickedColor = pickColor();
-        colorDisplay.textContent = pickedColor;
         for (var i = 0; i < squares.length; i++) {
             squares[i].style.display = "block";
             squares[i].style.backgroundColor = colors[i];
@@ -50,11 +47,12 @@ document.addEventListener("DOMContentLoaded", function () {
         //change colors of squares
         for (var i = 0; i < squares.length; i++) {
             squares[i].style.backgroundColor = colors[i];
-            //change color of h1
-            h1.style.backgroundColor = "#5ca0c9";
         }
+        //change color of h1
+        h1.style.backgroundColor = "#5ca0c9";
         this.textContent = "New Colors";
     });
+    colorDisplay.textContent = pickedColor;
     for (var i = 0; i < squares.length; i++) {
         // add initial colors to squares
         squares[i].style.backgroundColor = colors[i];
@@ -68,7 +66,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 changeColors(clickedColor);
                 h1.style.backgroundColor = clickedColor;
                 resetBtn.textContent = "Play again?";
-                
             }
             else {
                 this.style.backgroundColor = "#123252";

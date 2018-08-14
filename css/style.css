@@ -1,11 +1,12 @@
 body {
     background-color: #123252;
     margin: 0;
+    font-family: "Montserrat";
 }
 
 #container {
-    width: 600px;
-    margin: 0 auto;
+    max-width: 600px;
+    margin: 15px auto;
 }
 
 .square {
@@ -25,11 +26,13 @@ h1 {
     padding: 25px 0;
     background-color: #5ca0c9;
     transition: background 0.5s;
+    font-weight: normal;
+    text-transform: uppercase;
 }
 
 #message {
-    color: #fff;
-    width:32%;
+    color: #5ca0c9;
+    width: 30%;
     display: inline-block;
 }
 
@@ -41,11 +44,26 @@ h1 {
 }
 
 button {
+    color: #5ca0c9;
     border: none;
     outline: none;
     text-transform: uppercase;
-    font-size: 15px;
+    font-size: inherit;
+    background: none;
+    transition: all 0.5s;
+    height: 100%;
 }
-.selected{
-    background-color:#5ca0c9;
+
+button:hover {
+    color: #fff;
+    background-color: #5ca0c9;
+}
+
+.selected {
+    background-color: #5ca0c9;
+    color: #fff;
+}
+
+#colorDisplay {
+    font-size: 200%;
 }
