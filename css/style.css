@@ -23,6 +23,7 @@ h1 {
     color: #fff;
     margin: 0;
     padding: 25px 0;
+    background-color: #5ca0c9;
     transition: background 0.5s;
 }
 
@@ -44,4 +45,7 @@ button {
     outline: none;
     text-transform: uppercase;
     font-size: 15px;
+}
+.selected{
+    background-color:#5ca0c9;
 }

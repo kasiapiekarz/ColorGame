@@ -1,15 +1,48 @@
 document.addEventListener("DOMContentLoaded", function () {
     var squares = document.querySelectorAll(".square");
-    var colors = generateRandomColors(6);
+    
+    var numSquares = 6
+    var colors = generateRandomColors(numSquares);
     var messageDisplay = document.getElementById("message");
     var pickedColor = pickColor();
     var colorDisplay = document.getElementById("colorDisplay");
     colorDisplay.textContent = pickedColor;
     var h1 = document.querySelector("h1");
     var resetBtn = document.getElementById("reset");
+    var easyBtn = document.getElementById("easyBtn");
+    var hardBtn = document.getElementById("hardBtn");
+    
+    easyBtn.addEventListener("click", function () {
+        hardBtn.classList.remove("selected");
+        this.classList.add("selected");
+        numSquares = 3;
+        colors = generateRandomColors(numSquares);
+        pickedColor = pickColor();
+        colorDisplay.textContent = pickedColor;
+        for (var i = 0; i < squares.length; i++) {
+            if (colors[i]) {
+                squares[i].style.backgroundColor = colors[i];
+            }
+            else {
+                squares[i].style.display = "none";
+            }
+        }
+    });
+    hardBtn.addEventListener("click", function () {
+        easyBtn.classList.remove("selected");
+        this.classList.add("selected");
+        numSquares=6;
+        colors = generateRandomColors(numSquares);
+        pickedColor = pickColor();
+        colorDisplay.textContent = pickedColor;
+        for (var i = 0; i < squares.length; i++) {
+            squares[i].style.display = "block";
+            squares[i].style.backgroundColor = colors[i];
+        }
+    });
     resetBtn.addEventListener("click", function () {
         //generate all new colors
-        colors = generateRandomColors(6);
+        colors = generateRandomColors(numSquares);
         //pick a new random color from array
         pickedColor = pickColor();
         //change colorDisplay to match pickedColor
@@ -18,8 +51,9 @@ document.addEventListener("DOMContentLoaded", function () {
         for (var i = 0; i < squares.length; i++) {
             squares[i].style.backgroundColor = colors[i];
             //change color of h1
-            h1.style.backgroundColor = "#123252";
+            h1.style.backgroundColor = "#5ca0c9";
         }
+        this.textContent = "New Colors";
     });
     for (var i = 0; i < squares.length; i++) {
         // add initial colors to squares
@@ -33,6 +67,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 messageDisplay.textContent = "Correct!";
                 changeColors(clickedColor);
                 h1.style.backgroundColor = clickedColor;
+                resetBtn.textContent = "Play again?";
+                
             }
             else {
                 this.style.backgroundColor = "#123252";
