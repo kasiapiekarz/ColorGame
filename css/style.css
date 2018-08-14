@@ -1,5 +1,6 @@
 body {
     background-color: #123252;
+    margin: 0;
 }
 
 #container {
@@ -19,11 +20,28 @@ body {
 
 h1 {
     text-align: center;
-    color:#fff;
-    margin:0;
+    color: #fff;
+    margin: 0;
     padding: 25px 0;
     transition: background 0.5s;
 }
-#message{
-    color:#fff;
+
+#message {
+    color: #fff;
+    width:32%;
+    display: inline-block;
+}
+
+#stripe {
+    text-align: center;
+    background-color: #fff;
+    height: 30px;
+    color: #000;
+}
+
+button {
+    border: none;
+    outline: none;
+    text-transform: uppercase;
+    font-size: 15px;
 }
